@@ -6,9 +6,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <title>rock paper scissors</title>
   </head>
   <body>
-    <script src="script.js"></script>
+      <header>
+          <h1>Rock Paper Scissor </h1>
+      </header>
+
+      <div class="playground">
+          <h2 id="comment">Please choose the button</h2>
+          <div class="score">
+              <div class="score-container">
+                  <h1>Player Score</h1>
+                  <h2 id="human-score">0</h2>
+              </div>
+              <div class="score-container">
+                  <h1>Computer Score</h1>
+                  <h2 id="computer-score">0</h2>
+              </div>
+          </div>
+
+
+          <div class="choice">
+                  <h2>Player Choice</h2>
+                  <div class="choice-button">
+                      <button class="player-choices" value="1" onclick="playRound(1)">rock</button>
+                      <button class="player-choices" value="2" onclick="playRound(2)">paper</button>
+                      <button class="player-choices" value="3" onclick="playRound(3)">scissors</button>
+                  </div>
+
+          </div>
+      </div>
+
+      <footer>
+          <p>rovincode. for study only</p>
+      </footer>
+      <script src="script.js"></script>
+
   </body>
 </html>

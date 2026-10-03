@@ -1,0 +1,75 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+header {
+    text-align: center;
+    background-color: #F2C46A ;
+
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+.playground {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FCF0DA;
+}
+
+.score {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.score-container {
+    text-align: center;
+
+}
+
+.score-container h2 {
+    font-size: 40px;
+}
+
+.choice {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.choice-button {
+    display: flex;
+    gap: 20px;
+}
+.choice-button button {
+    background-color: #4C4541;
+    color: white;
+    font-weight: 900px;
+    padding: 14px;
+    border-radius: 20px;
+
+}
+
+
+footer {
+    background-color: #4C4541;
+    color: white;
+    text-align: center;
+    font-weight: 900px;
+}

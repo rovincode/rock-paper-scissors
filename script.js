@@ -1,81 +1,92 @@
+
+let computerScoreDisplay = document.getElementById("computer-score");
+let humanScoreDisplay = document.getElementById("human-score");
+let pressButton = document.getElementsByClassName("player-choices");
+let commentDisplay = document.getElementById("comment");
+
+
 function getComputerChoice() {
   return Math.floor(Math.random() * 3) + 1;
 }
 
-function getHumanChoice() {
-  console.log("1 = rock, 2 = paper, 3 = scissors");
+// function getHumanChoice() {
 
-  let inputValue = Number(prompt("1 = rock, 2 = paper, 3 = scissors. Input just a number"));
+//   let inputValue = pressButton.value;
 
-  if (Number.isInteger(inputValue) && inputValue >= 1 && inputValue <= 3) {
-    return inputValue;
-  }
+//   if (Number.isInteger(inputValue)) {
+//     return inputValue;
+//   }
+// }
 
-  console.log("Please input 1, 2, or 3");
-}
+let round = 0;
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice) {
 
 
-function playRound() {
-  let round = 0;
-  let humanScore = 0;
-  let computerScore = 0;
+  if (round < 5) {
 
-  while (round < 5) {
-
-    let humanChoice = getHumanChoice();
     let computerChoice = getComputerChoice();
 
     if (humanChoice === computerChoice) {
-      console.log("draw");
+      commentDisplay.innerHTML = "DRAW";
       round++;
-      continue;
+    } else {
+      if (humanChoice === 1) {
+
+        if (computerChoice === 3) {
+          commentDisplay.innerHTML = "Human Win";
+          humanScore++;
+          humanScoreDisplay.innerHTML = humanScore;
+        } else {
+          commentDisplay.innerHTML = "computer Win";
+          computerScore++;
+          computerScoreDisplay.innerHTML = computerScore;
+        }
+
+      } else if (humanChoice === 2) {
+
+        if (computerChoice === 1) {
+          commentDisplay.innerHTML = "Human Win";
+          humanScore++;
+          humanScoreDisplay.innerHTML = humanScore;
+        } else {
+          commentDisplay.innerHTML = "computer Win"
+          computerScore++;
+          computerScoreDisplay.innerHTML = computerScore;
+        }
+
+      } else if (humanChoice === 3) {
+
+        if (computerChoice === 2) {
+          commentDisplay.innerHTML = "Human Win";
+          humanScore++;
+          humanScoreDisplay.innerHTML = humanScore;
+        } else {
+          commentDisplay.innerHTML = "computer Win";
+          computerScore++;
+          computerScoreDisplay.innerHTML = computerScore;
+        }
+
+      }
+
+      round++;
+
     }
 
-    if (humanChoice === 1) {
 
-      if (computerChoice === 3) {
-        console.log("Human win");
-        humanScore++;
-      } else {
-        console.log("Computer win");
-        computerScore++;
-      }
-
-    } else if (humanChoice === 2) {
-
-      if (computerChoice === 1) {
-        console.log("Human win");
-        humanScore++;
-      } else {
-        console.log("Computer win");
-        computerScore++;
-      }
-
-    } else if (humanChoice === 3) {
-
-      if (computerChoice === 2) {
-        console.log("Human win");
-        humanScore++;
-      } else {
-        console.log("Computer win");
-        computerScore++;
-      }
-
-    }
-
-    round++;
-  }
-
-  if (humanScore > computerScore) {
-    console.log("Human Win");
-  } else if (humanScore < computerScore) {
-    console.log("Computer win");
   } else {
-    console.log("draw match");
+
+    if (humanScore > computerScore) {
+      commentDisplay.innerHTML = "Round Done. Human Win";
+    } else if (humanScore < computerScore) {;
+      commentDisplay.innerHTML = "Round Done. Computer Win";
+    } else {
+      commentDisplay.innerHTML = "Round Done. Draw";
+    }
+
   }
 
-  console.log("Human score:", humanScore);
-  console.log("Computer score:", computerScore);
-}
 
-playRound();
+}
